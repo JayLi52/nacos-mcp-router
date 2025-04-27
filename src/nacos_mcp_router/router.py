@@ -11,6 +11,11 @@ from .nacos_http_client import NacosHttpClient
 from .router_types import ChromaDb
 from .router_types import CustomServer
 
+# 设置环境变量，防止 nacosAddr 为空
+os.environ.setdefault("NACOS_ADDR", "127.0.0.1:8848")
+os.environ.setdefault("NACOS_USERNAME", "nacos")
+os.environ.setdefault("NACOS_PASSWORD", "nacosopensource")
+
 nacos_addr = os.getenv("NACOS_ADDR","")
 nacos_user_name = os.getenv("NACOS_USERNAME","")
 nacos_password = os.getenv("NACOS_PASSWORD","")
